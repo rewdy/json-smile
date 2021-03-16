@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import "./App.scss";
 
 function App() {
+  const [error, setError] = useState<string>();
+  const [input, setInput] = useState("");
+
+  const makePretty = () => {
+    setError(undefined);
+    if (!input) return;
+    try {
+      const json = JSON.parse(input);
+      setInput(JSON.stringify(json, null, 2));
+    } catch (err) {
+      console.log("Bad json", err);
+      setError(err.toString());
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header">json smile</header>
+      <main>
+        {error && (
+          <div className="error">{error}</div>
+        )}
+        <textarea
+          value={input}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
+            setInput(e.target.value);
+          }}
+          className="codes"
+        />
+        <button type="button" onClick={makePretty} className="btn">
+          Make it smile 😊
+        </button>
+      </main>
     </div>
   );
 }
