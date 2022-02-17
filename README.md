@@ -2,6 +2,8 @@
 
 A dead simple, web-based JSON formatter.
 
+## View/use here: [json-smile.surge.sh](https://json-smile.surge.sh)
+
 ## Available Scripts
 
 In the project directory, you can run:
