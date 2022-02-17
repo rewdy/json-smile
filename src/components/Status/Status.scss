@@ -1,0 +1,30 @@
+@import "../../styles/vars";
+
+@mixin status-style($color: $brand-primary) {
+  background-color: change-color($color, $lightness: 95%);
+  border: 1px solid $color;
+  box-shadow: 0.5rem 0.5rem 0 $color;
+}
+
+.status {
+  @include status-style($brand-info);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  > * {
+    flex-grow: 1;
+  }
+  > *:last-child {
+    flex-grow: 0;
+  }
+  &-success {
+    @include status-style($brand-secondary);
+  }
+  &-error {
+    @include status-style($brand-danger);
+  }
+  &-warning {
+    @include status-style($brand-warning);
+  }
+}

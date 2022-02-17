@@ -1,0 +1,40 @@
+/**
+ * @file
+ * Your Project Stylesheet
+*/
+
+@import "./vars";
+
+:root {
+  --brand-primary: $brand-primary;
+  --brand-secondary: $brand-secondary;
+  --brand-info: $brand-info;
+  --brand-success: $brand-success;
+  --brand-warning: $brand-warning;
+  --brand-danger: $brand-danger;
+  --brand-light: $brand-light;
+  --brand-dark: $brand-dark;
+  --accent: $accent;
+  --pop: $pop;
+}
+
+// Core
+@import "./core";
+@import "fonts/phosphate/stylesheet.css";
+@import "./colors";
+
+// @import "modules/_header";
+// @import "modules/_menu";
+
+// Type
+@import "./type";
+@import "./buttons";
+
+// @import "modules/_icons";
+
+// Forms
+// @import "modules/_buttons"; // make sure this comes before form
+// @import "modules/_forms";
+
+// // Animations
+@import "modules/_animations";

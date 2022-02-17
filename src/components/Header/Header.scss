@@ -1,0 +1,55 @@
+@import "../../styles/vars";
+
+$tagline-background: $brand-primary;
+
+.header-page {
+  text-align: center;
+  padding: $grid-gutter*0.5 0;
+}
+
+.site-title {
+  margin-bottom: 1rem;
+}
+.site-tagline {
+  display: inline-block;
+  padding: 0.25rem 2rem;
+  background-color: $tagline-background;
+  color: #fff; // probably not enough contrast here
+  // color: contrasting-text($brand-primary);
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+}
+
+.carrot {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-style: solid;
+    border-width: 0.5em 0 0.5em 1em;
+    border-color: transparent transparent transparent $brand-warning;
+    transform: translate(-75%, -46%);
+    z-index: -1;
+    // animation: annoying-hover 2s linear infinite;
+  }
+}
+
+// @keyframes annoying-hover {
+//   0% {
+//     transform: translate(-75%, -46%);
+//   }
+//   15% {
+//     transform: translate(-100%, -46%);
+//   }
+//   75% {
+//     transform: translate(-50%, -46%);
+//   }
+//   100% {
+//     transform: translate(-75%, -46%);
+//   }
+// }

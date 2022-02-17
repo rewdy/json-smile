@@ -1,0 +1,52 @@
+body {
+  // this is for the footer
+  background-color: $footer-background;
+  color: $text-color;
+}
+.page {
+  padding: 1em 2em 2em;
+  background-color: $page-background;
+  background-image: radial-gradient($line-color 1px, transparent 1px),
+    radial-gradient($line-color 1px, transparent 1px);
+  background-position: 0 0, 25px 25px;
+  background-attachment: fixed;
+  background-size: 50px 50px;
+}
+// Basic links
+a {
+  color: $link-color;
+  // @include transition();
+  &:hover {
+    color: $link-hover;
+  }
+  &:focus {
+    @include focus();
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    // this is for the footer
+    background-color: $footer-background-dark;
+    color: $text-color-dark;
+  }
+  .page {
+    background-color: $page-background-dark;
+    background-image: radial-gradient($line-color-dark 1px, transparent 1px),
+      radial-gradient($line-color-dark 1px, transparent 1px);
+    background-position: 0 0, 25px 25px;
+    background-attachment: fixed;
+    background-size: 50px 50px;
+  }
+  // Basic links
+  a {
+    color: darken($link-color, 10%);
+    // @include transition();
+    &:hover {
+      color: darken($link-hover, 10%);
+    }
+    &:focus {
+      @include focus();
+    }
+  }
+}
