@@ -2,7 +2,7 @@
 
 A dead simple, web-based JSON formatter.
 
-## View/use here: [json-smile.surge.sh](https://json-smile.surge.sh)
+## View/use here: [json-smile.rewdy.lol](https://json-smile.rewdy.lol)
 
 ## Available Scripts
 
