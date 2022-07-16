@@ -1,0 +1,11 @@
+#!/bin/bash -e
+
+dir="$( cd "$( dirname "$0" )" && pwd )"
+cd $dir/.. || exit
+. $dir/util
+
+bucket="${S3_BUCKET_NAME}"
+
+notify "Pushing site data"
+
+aws s3 sync build/. "s3://$bucket" --delete

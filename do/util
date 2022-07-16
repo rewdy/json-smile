@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+notify() {
+  echo '-------'
+  echo "$@"
+  echo '-------'
+}
